@@ -19,22 +19,27 @@ console.log('its working');
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(Data) {
-    let FinalData = fifaData.filter((home) => {
-        return home.Stage === "Final";
-    });
+function getFinals(FinalStage) {
+    let newArry = [].Stage;
+       for (let i = 0; i < FinalStage.length; i++){
+           return(newArry);
+       };
+    // let FinalData = fifaData.filter((home) => {
+    //     return home.Stage === "Final";
+    // });
 }
-console.log(getFinals[0]);
+console.log(getFinals(fifaData));
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
+// function getYears(allYears) {
+//     const years = allYears.map((year) => {
+//         return {'Year' : year.Year};
+//     })
+//    console.log(Years);
+// };
 
-    /* code here */
-
-};
-
-getYears();
+// console.log(getYears(getFinals()));
 
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
@@ -61,13 +66,19 @@ getWinnersByYear();
 
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
+function getAverageGoals(AvgGoals) {
 
-    /* code here */
+    const AvgHomeGoals = fifaData.reduce((total, HomeTeamGoals) =>{
+        return total += home.HomeTeamGoals;
+    }, 0);
+
+    const AvgAwayGoals = fifaData.reduce((total, AwayTeamGoals) => {
+        return total += home.AwayTeamGoals;
+    }, 0);
 
 };
 
-getAverageGoals();
+getAverageGoals(HomeTeamGoals, AwayTeamGoals);
 
 /// STRETCH 🥅 //
 
